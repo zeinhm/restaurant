@@ -184,8 +184,17 @@ export default class Menu extends Component {
                     <p>{i.restaurant}</p>
                   </div>
                   <div className="detail">
-                    <span><FontAwesomeIcon icon={faStar} /> {i.rating}</span>
-                    <p>&nbsp; &middot; &nbsp; {i.name} &nbsp; &middot; &nbsp; ${i.price}</p>
+                    <span className="star"><FontAwesomeIcon icon={faStar} /></span>
+                    <span>&nbsp;</span>
+                    <span className="rating-point">{i.rating}</span>
+                    <span>&nbsp;</span>
+                    <span>&middot;</span>
+                    <span>&nbsp;</span>
+                    <span className="food-name">{i.name}</span>
+                    <span>&nbsp;</span>
+                    <span>&middot;</span>
+                    <span>&nbsp;</span>
+                    <span className="price">${i.price}</span>
                   </div>
                 </div>
               </div>

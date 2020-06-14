@@ -32,18 +32,23 @@
 
 .menu-item .desc .detail {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
+  flex-wrap: wrap;
 }
 
-.menu-item .desc .detail p {
+.menu-item .desc .detail span {
   color: #9E9993;
+}
+
+.menu-item .desc .detail .star,
+.menu-item .desc .detail .rating-point {
+  color: black;
 }
 
 @media(min-width:320px) {
   
   .menu-item > div {
     width: 70%;
+    min-height: 80%;
     border-radius: 20px;
     margin-bottom: 3rem;
     -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.1);
@@ -71,13 +76,13 @@
   }
 
   .menu-item .desc .detail span {
-    font-size: .8rem;
-  }
-  
-  .menu-item .desc .detail p {
     font-size: .75rem;
   }
-
+  
+  .menu-item .desc .detail .rating svg {
+    font-size: .5rem;
+    margin-bottom: .05rem;
+  }
 }
 
 @media(min-width:481px) {

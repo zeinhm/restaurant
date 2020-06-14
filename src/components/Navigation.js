@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Navbar, Form, FormControl } from 'react-bootstrap'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { Navbar, Form, FormControl, Dropdown, DropdownButton } from 'react-bootstrap'
+import { faBars, faUser } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
@@ -14,6 +14,10 @@ export default class Navigation extends Component {
             <FontAwesomeIcon icon={faBars} />
             <Navbar.Brand href="#home">Chukwudi</Navbar.Brand>
           </div>
+          <DropdownButton title={[<FontAwesomeIcon icon={faUser} />]} drop='left'>
+            <Dropdown.Item href="#">Login</Dropdown.Item>
+            <Dropdown.Item href="#">Register</Dropdown.Item>
+          </DropdownButton>
           <Navbar.Collapse id="basic-navbar-nav">
             <Form inline>
               <FormControl type="text" placeholder="&#xF002; &nbsp; Search" style={{ fontFamily: 'Arial, FontAwesome' }} className="mr-sm-2" />

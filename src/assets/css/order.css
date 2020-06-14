@@ -2,7 +2,68 @@
   display: none;
 }
 .order .dropdown .btn-primary {
-  color: #000;
   background-color: white;
   border-color: white;
+}
+
+
+@media(max-width:480px) {
+  .order .dropdown {
+    display: none;
+  }
+  
+}
+@media(min-width:481px) {
+  .order {
+    height: 100vh;
+    width: 33%;
+    position: fixed;
+    padding-left: 5%;
+  }
+
+  .order .row:nth-child(1) {
+    position: relative;
+    width: 100%;
+  } 
+
+  .order .dropdown {
+    position: absolute;
+    top: .5rem;
+    right: 1rem;
+  }
+  
+  .order .dropdown-toggle::before {
+    display: none;
+  }
+  .order .dropdown .btn-primary {
+    background-color: coral;
+    border-color: coral;
+  }
+  .order .dropdown .btn-primary:hover {
+    color: #fff;
+    background-color: coral;
+    border-color: coral;
+  } 
+  .order .dropdown .btn-primary:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5)
+  } 
+  .btn-primary:not(:disabled):not(.disabled).active:focus, 
+  .btn-primary:not(:disabled):not(.disabled):active:focus, 
+  .show>.btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5);
+  }
+
+}
+@media(min-width:769px) {
+  .order .dropdown {
+    position: absolute;
+    top: 0;
+    right: 1rem;
+  }
+}
+@media(min-width:1025px) {
+
+}
+@media(min-width:1201px) {
+
 }

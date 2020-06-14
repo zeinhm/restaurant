@@ -14,6 +14,9 @@
   }
 
 @media(max-width:480px) {
+  .navbar {
+    position: relative;
+  }
   .navbar > button {
     font-size: 1rem;
     padding: .25rem .5rem;
@@ -25,6 +28,34 @@
     .navbar > .brand > svg {
     display: none;
     }
+
+    .navbar .dropleft {
+      position: absolute;
+      top: .5rem;
+      right: 1rem;
+    }
+    
+    .navbar .dropdown-toggle::before {
+      display: none;
+    }
+    .navbar .dropleft .btn-primary {
+      background-color: coral;
+      border-color: coral;
+    }
+    .navbar .dropleft .btn-primary:hover {
+      color: #fff;
+      background-color: coral;
+      border-color: coral;
+    } 
+    .navbar .dropleft .btn-primary:focus {
+      box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5)
+    } 
+    .btn-primary:not(:disabled):not(.disabled).active:focus, 
+    .btn-primary:not(:disabled):not(.disabled):active:focus, 
+    .show>.btn-primary.dropdown-toggle:focus {
+      box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5);
+    }
+    
   .navbar > .navbar-collapse > .form-inline {
     margin: 1rem .5rem 0 .5rem;
   }  
@@ -35,8 +66,20 @@
     display: flex;
     justify-content: space-between;
   }
+  
     .navbar > .navbar-collapse {
     max-width: 55%;
+  }
+  .navbar .dropleft {
+    display: none;
+  }
+  .navbar .dropdown-toggle::after {
+    display: none;
+  }
+  .navbar .dropdown .btn-primary {
+    color: #000;
+    background-color: white;
+    border-color: white;
   }
     .navbar > .navbar-collapse > .form-inline,
     .navbar > .navbar-collapse > .form-inline > input {
