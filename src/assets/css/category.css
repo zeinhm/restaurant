@@ -23,8 +23,8 @@
   }
 
     .category > .category-header > .delivery-toggle {
-      background-color: #E66B41;
-      color: #fff;
+      background-color: coral;
+      color: white;
       border-radius: 25px;
     }
 
@@ -59,12 +59,12 @@
   }
   
   .category-option > .slick-slider .slick-slide:nth-child(1) > div  {
-    background-color: #F1C418;
+    background-color: gold;
   }
 
 
   .category-option > .slick-slider .slick-arrow::before {
-    color: #9F9F9F;
+    color: darkgray;
   }
 
   .category-option .option > div {
@@ -72,9 +72,9 @@
   }
 
   .category-option .option > .icon {
-    border: 1px solid #D3D3D3;
+    border: 1px solid gainsboro;
     border-radius: 50%;
-    background-color: #fff;
+    background-color: white;
   }
   
   

@@ -6,9 +6,127 @@
   border-color: white;
 }
 
+.order .title p {
+  font-weight: 500;
+}
+
+.order .order-list-container {
+  width: 90%;
+}
+
+.order .order-list-container .address {
+  background-color: slateblue;
+  color: white;
+  border-radius: 15px;
+}
+
+.order .order-list-container .address div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.order .order-list-container .address div span {
+  color: gold;
+  font-weight: 600;
+}
+
+.order-list-container .item {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.order-list-container .item p {
+  margin: 0;
+}
+
+.order-list-container .item img {
+  border-radius: 10px;
+}
+
+.order-list-container .item .price {
+  position: absolute;
+  right: 0;
+  color: darkgray;
+}
+
+.order .delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.order .delivery .icon {
+  color: coral;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: oldlace;
+  border-radius: 10px;
+}
+
+.order .delivery .title {
+  font-weight: 500;
+}
+
+.order .delivery .price {
+  color: darkgray;
+}
+
+.order .total {
+  display: flex;   
+  flex-direction: column;
+}
+
+.order .total .price {
+  display: flex; 
+  justify-content: space-between;
+  align-items: center;
+}
+
+.divider {
+  width: 100%;
+  margin: 1rem 0;
+  border: .5px solid lightgray;
+}
+
+.order .total .amount {
+  display: flex;
+}
+
+.order .total .amount > div{
+  width: 50%;
+}
+
+.order .total .amount .person >div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: .75px solid lightgray;
+  border-radius: 10px;
+}
+
+.order .total .amount .person >div div {
+  text-align: center;
+}
+
+.order .total .amount .checkout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: gold;
+  border-radius: 10px 0 0 10px;
+}
+
+
+
+
+
+
+
 
 @media(max-width:480px) {
-  .order .dropdown {
+  .order {
     display: none;
   }
   
@@ -18,7 +136,7 @@
     height: 100vh;
     width: 33%;
     position: fixed;
-    padding-left: 5%;
+    padding-left:3%;
   }
 
   .order .row:nth-child(1) {
@@ -35,12 +153,15 @@
   .order .dropdown-toggle::before {
     display: none;
   }
+  .order .dropdown .btn {
+    padding: 0.2rem .5rem;
+  }
   .order .dropdown .btn-primary {
     background-color: coral;
     border-color: coral;
   }
   .order .dropdown .btn-primary:hover {
-    color: #fff;
+    color: white;
     background-color: coral;
     border-color: coral;
   } 
@@ -53,15 +174,233 @@
     box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5);
   }
 
+  .order .title p {
+    margin: .7rem 0 0 .7rem;
+    font-size: 1.25rem;
+  }
+
+  .order .order-list-container {
+    padding-right: 1rem;
+    margin-top: 2rem;
+  }
+  .order .order-list-container .order-list {
+    max-height: 40vh;
+    overflow-y: auto;
+  }
+
+  .order .order-list-container .order-list::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    background-color: #F5F5F5;
+  }
+  .order .order-list-container .order-list::-webkit-scrollbar {
+    width: 8px;
+    background-color: #F5F5F5;
+  }
+  .order .order-list-container .order-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background: rgba(0, 0, 0, 0.2);
+  }
+
+  .order .order-list-container .address {
+    height: 6rem;
+    margin: 0 1rem 3rem 0;
+    padding: 1rem;
+    font-size: .75rem;
+  }
+
+  .order-list-container .order-list table {
+    width: 90%;
+  }
+
+  .order-list-container .item {
+    width: 100%;
+    font-size: .75rem;
+    margin-bottom: 1rem;
+  }
+
+  .order-list-container .item img {
+    width: 4rem;
+  }
+
+  .order-list-container .item .qty {
+    font-weight: 500;
+  }
+
+  .order-list-container .item .name {
+    font-weight: 500;
+    max-width: 4rem;
+  }
+  
+  .order .delivery {
+    width: 75%;
+    margin-top: 1rem;
+  }
+
+  .order .delivery .icon {
+    width: 30%;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+  }
+
+  .order .delivery .title,
+  .order .delivery .price {
+    font-size: .75rem;
+  }
+
+  .order .total {
+    width: 90%;
+  }
+  
+  .order .total .price {
+    padding: 2rem 2rem 0 0;
+    font-size: 1rem;
+  }
+
+  .order .total .price p {
+    margin: 0;
+  }
+  
+  .order .total .price span {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .order .total .amount .person> p {
+    font-size: .75rem;
+  }
+
+  .order .total .amount .person >div {
+    margin: 0 1rem 0 .5rem;
+  }
+  
+  .order .total .amount .person >div div{
+    width: 33%;
+  }
+  
+  .order .total .amount .person .qty {
+    font-size: 1rem;
+  }
+
+  .order .total .amount .person .decrement {
+    font-size: 1.5rem;
+  }
+  .order .total .amount .person .increment {
+    font-size: 1.25rem;
+  }
+
+  .order .total .amount .checkout {
+    font-size: .75rem;
+    font-weight: 500;
+  }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
 @media(min-width:769px) {
-  .order .dropdown {
-    position: absolute;
-    top: 0;
-    right: 1rem;
+  .order .title p {
+    font-size: 1.5rem;
   }
 }
+
 @media(min-width:1025px) {
+
+  .order .title p {
+    font-size: 2rem;
+  }
+
+  .order .order-list-container .address {
+    height: 8rem;
+    padding: 1.35rem;
+    font-size: 1rem;
+  }
+
+  .order .order-list-container .order-list {
+    max-height: 30vh;
+    overflow-y: auto;
+  }
+
+  .order-list-container .item {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+  }
+
+  .order-list-container .item img {
+    width: 6.5rem;
+  }
+
+  .order-list-container .item .name {
+    max-width: 15rem;
+  }
+
+  .order .delivery {
+    margin-top: 3rem;
+  }
+
+  .order .delivery .icon {
+    width: 40%;
+    padding: 1.25rem 0;
+    font-size: 2rem;
+  }
+
+  .order .delivery .title,
+  .order .delivery .price {
+    font-size: 1.25rem;
+  }
+
+  .order .total .price {
+    padding: 2rem 2rem 0 0;
+    font-size: 1.25rem;
+  }
+
+  .order .total .price p {
+    margin: 0;
+  }
+  
+  .order .total .price span {
+    font-size: 1.75rem;
+  }
+
+  .order .total .amount .person> p {
+    font-size: 1rem;
+  }
+
+  .order .total .amount .person >div {
+    margin: 0 1rem 0 .5rem;
+  }
+
+  .order .total .amount .person > div{
+    width: 60%;
+  }
+  
+  .order .total .amount .person >div div{
+    width: 33%;
+  }
+  
+  .order .total .amount .person .qty {
+    font-size: 1.25rem;
+  }
+
+  .order .total .amount .person .decrement,
+  .order .total .amount .person .increment {
+    font-size: 1.65rem;
+  }
+
+  .order .total .amount .checkout {
+    font-size: 1.25rem;
+    font-weight: 500;
+  }
 
 }
 @media(min-width:1201px) {
