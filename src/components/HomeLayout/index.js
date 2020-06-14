@@ -13,7 +13,7 @@ export default class HomeLayout extends Component {
             <Category />
             <Menu />
           </Col>
-          <Col large={true} xs={{ span: 3, offset: 1 }}>
+          <Col large={true} xs={{ span: 4, offset: 1 }}>
             <Order />
           </Col>
         </Row>

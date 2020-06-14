@@ -17,6 +17,13 @@
     }
 }
 @media(min-width: 481px) {
+  .home-layout > .row {
+    display: flex;
+  }
+  .home-layout > .row > .col-4 {
+    margin-left: 0;
+    padding-left: 7.5%;
+  }
   .home-layout > .row > .col-8 {
     overflow-y: scroll;
     max-height: 100vh;

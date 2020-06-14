@@ -1,7 +1,7 @@
 @import './assets/css/index.css';
 
 html, body {
-  overflow : hidden;
+  overflow-x : hidden;
 }
 
 body {
