@@ -1,0 +1,8 @@
+.order .dropdown-toggle::after {
+  display: none;
+}
+.order .dropdown .btn-primary {
+  color: #000;
+  background-color: white;
+  border-color: white;
+}
