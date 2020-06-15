@@ -118,12 +118,11 @@
   border-radius: 10px 0 0 10px;
 }
 
-
-
-
-
-
-
+.order .total .amount .checkout:hover,
+.order .total .amount .person .decrement:hover,
+.order .total .amount .person .increment:hover {
+  cursor: pointer;
+}
 
 @media(max-width:480px) {
   .order {
@@ -184,7 +183,7 @@
     margin-top: 2rem;
   }
   .order .order-list-container .order-list {
-    max-height: 40vh;
+    max-height: 50vh;
     overflow-y: auto;
   }
 
@@ -235,7 +234,7 @@
   
   .order .delivery {
     width: 75%;
-    margin-top: 1rem;
+    margin-top: 2.5rem;
   }
 
   .order .delivery .icon {
@@ -296,17 +295,6 @@
   }
 
 }
-
-
-
-
-
-
-
-
-
-
-
 
 @media(min-width:769px) {
   .order .title p {
@@ -401,8 +389,5 @@
     font-size: 1.25rem;
     font-weight: 500;
   }
-
-}
-@media(min-width:1201px) {
 
 }

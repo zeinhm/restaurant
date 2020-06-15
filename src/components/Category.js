@@ -85,7 +85,15 @@ const categoryData = [
 ]
 
 export default class Category extends Component {
+
+  state = {
+    category: ''
+  }
+
+  toggleCategory = category => this.setState({ category })
+
   render() {
+    const { category } = this.state
     const settings = {
       infinite: false,
       speed: 500,
@@ -137,19 +145,25 @@ export default class Category extends Component {
           <Slider {...settings}>
             {
               categoryData.map((i, key) =>
-                <div className={`option option-${key}`} key={key}>
-                  <div className="icon">
-                    <FontAwesomeIcon icon={i.icon} />
-                  </div>
-                  <div className="name">
-                    <p>{i.name}</p>
+                <div className={`option-wrapper ${category === i.name && "active"}`}
+                  onClick={() => this.toggleCategory(i.name)}
+                >
+                  <div key={key}
+                    className="option"
+                  >
+                    <div className="icon">
+                      <FontAwesomeIcon icon={i.icon} />
+                    </div>
+                    <div className="name">
+                      <p>{i.name}</p>
+                    </div>
                   </div>
                 </div>
               )
             }
           </Slider>
         </div>
-      </div>
+      </div >
     )
   }
 }
