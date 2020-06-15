@@ -147,14 +147,16 @@
 }
 
 @media(max-width:480px) {
-  .order {
-    display: none;
-  }
+  
   .order {
     width: 100%;
-    display: flex !important;
+    display: flex;
     justify-content: center;
     flex-direction: column;
+  }
+
+  .order {
+    display: none;
   }
 
   .order .row:nth-child(1) {
