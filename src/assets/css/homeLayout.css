@@ -16,6 +16,9 @@
     display: flex;
     justify-content: center;
   }
+  .home-layout .warning {
+    display: none;
+  }
 }
 @media(min-width: 481px) {
   .home-layout > .row {
