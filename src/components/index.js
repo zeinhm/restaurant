@@ -1,5 +1,6 @@
 export { default as Navigation } from './Navigation'
-export { default as Order } from './Order'
+export { default as OrderComponent } from './Order'
 export { default as Header } from './Header'
 export { default as Category } from './Category'
 export { default as Menu } from './Menu'
+export { default as Warning } from './Warning'

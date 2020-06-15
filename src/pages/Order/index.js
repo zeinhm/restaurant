@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import { Navigation, Order, Header, Category, Menu } from 'components'
+import { Navigation, OrderComponent, Header, Warning } from 'components'
 
-export default class HomeLayout extends Component {
+export default class Order extends Component {
   render() {
     return (
       <div className="home-layout">
@@ -10,14 +10,14 @@ export default class HomeLayout extends Component {
           <Col large={true} xs={8}>
             <Navigation />
             <Header />
-            <Category />
-            <Menu />
-          </Col>
-          <Col large={true} xs={{ span: 4, offset: 1 }}>
-            <Order />
+            <Warning />
+            <div className="container">
+              <OrderComponent />
+            </div>
           </Col>
         </Row>
       </div>
     )
   }
 }
+

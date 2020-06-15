@@ -1,9 +1,30 @@
+.container > .order {
+  display: block;
+}
+
 .order .dropdown-toggle::after {
   display: none;
 }
+
+.order .dropdown-toggle::before {
+  display: none;
+}
 .order .dropdown .btn-primary {
-  background-color: white;
-  border-color: white;
+  background-color: coral;
+  border-color: coral;
+}
+.order .dropdown .btn-primary:hover {
+  color: white;
+  background-color: coral;
+  border-color: coral;
+} 
+.order .dropdown .btn-primary:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5)
+} 
+.btn-primary:not(:disabled):not(.disabled).active:focus, 
+.btn-primary:not(:disabled):not(.disabled):active:focus, 
+.show>.btn-primary.dropdown-toggle:focus {
+  box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5);
 }
 
 .order .title p {
@@ -92,6 +113,7 @@
 
 .order .total .amount {
   display: flex;
+  align-items: center;
 }
 
 .order .total .amount > div{
@@ -128,9 +150,146 @@
   .order {
     display: none;
   }
+  .order {
+    width: 100%;
+    display: flex !important;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .order .row:nth-child(1) {
+    position: relative;
+    width: 100%;
+  } 
+
+  .order .row:nth-last-child(1) {
+    margin: 0;
+  }
+
+  .order .dropdown {
+    display: none;
+  }
   
+  .order .title p {
+    margin: .7rem 0 0 1.5rem;
+    font-size: 1.25rem;
+  }
+
+  .order .order-list-container {
+    margin-top: 2rem;
+    width: 100%;
+    padding: 0 1rem;
+  }
+
+  .order .order-list-container .address {
+    height: 6rem;
+    margin: 0 1rem 2rem 1rem;
+    padding: 1rem;
+    font-size: .75rem;
+  }
+
+  .order-list-container .order-list {
+    padding: 0 1rem;
+  }
+  .order-list-container .order-list table {
+    width: 95%;
+  }
+
+  .order-list-container .item {
+    width: 100%;
+    font-size: .75rem;
+    margin-bottom: 1rem;
+    padding: 0 1rem;
+  }
+
+  .order-list-container .item img {
+    width: 4rem;
+  }
+
+  .order-list-container .item .qty {
+    font-weight: 500;
+    
+  }
+  .order-list-container .item .name {
+    font-weight: 500;
+    max-width: 6.5rem;
+  }
+  
+  .order .delivery {
+    width: 100%;
+    margin-top: 1.5rem;
+    padding: 0 2.5rem;
+  }
+
+  .order .delivery .icon {
+    width: 30%;
+    padding: .5rem 0;
+    font-size: 1.5rem;
+  }
+
+  .order .delivery .title,
+  .order .delivery .price {
+    font-size: .75rem;
+  }
+
+  .order .total {
+    width: 100%;
+    margin-top: 1.5rem;
+  }
+  
+  .order .total .price {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0 1rem;
+  }
+
+  .order .total .price p {
+    margin: 0;
+  }
+  
+  .order .total .price span {
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .order .total .amount .person {
+    padding: 1rem .5rem;
+  }
+  
+  .order .total .amount .person> p {
+    font-size: .85rem;
+  }
+
+  .order .total .amount .person >div {
+    margin: 0 1rem 0 .5rem;
+  }
+  
+  .order .total .amount .person >div div{
+    width: 33%;
+  }
+  
+  .order .total .amount .person .qty {
+    font-size: 1rem;
+  }
+
+  .order .total .amount .person .decrement {
+    font-size: 1.5rem;
+  }
+  .order .total .amount .person .increment {
+    font-size: 1.25rem;
+  }
+
+  .order .total .amount .checkout {
+    font-size: .75rem;
+    font-weight: 500;
+    height: 3rem;
+  }
 }
 @media(min-width:481px) {
+  .container > .order {
+    display: none;
+  }
+  
   .order {
     height: 100vh;
     width: 33%;
@@ -149,29 +308,10 @@
     right: 1rem;
   }
   
-  .order .dropdown-toggle::before {
-    display: none;
-  }
   .order .dropdown .btn {
     padding: 0.2rem .5rem;
   }
-  .order .dropdown .btn-primary {
-    background-color: coral;
-    border-color: coral;
-  }
-  .order .dropdown .btn-primary:hover {
-    color: white;
-    background-color: coral;
-    border-color: coral;
-  } 
-  .order .dropdown .btn-primary:focus {
-    box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5)
-  } 
-  .btn-primary:not(:disabled):not(.disabled).active:focus, 
-  .btn-primary:not(:disabled):not(.disabled):active:focus, 
-  .show>.btn-primary.dropdown-toggle:focus {
-    box-shadow: 0 0 0 0.2rem rgba(255,127,80 ,.5);
-  }
+  
 
   .order .title p {
     margin: .7rem 0 0 .7rem;

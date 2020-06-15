@@ -8,9 +8,14 @@
     justify-content: center;
     flex-direction: column;
   }
-    .home-layout > .row > div {
-      max-width: 100%;
-    }
+  .home-layout > .row > div {
+    max-width: 100%;
+  }
+  .home-layout .container {
+    padding: 0;
+    display: flex;
+    justify-content: center;
+  }
 }
 @media(min-width: 481px) {
   .home-layout > .row {
