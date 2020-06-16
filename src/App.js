@@ -1,22 +1,17 @@
 import React from 'react';
-import Home from 'pages/Home'
-import Order from 'pages/Order'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
+import Pages from './pages'
 import ViewportRestrict from './components/viewport/index'
 
 function App() {
   return (
-    <Router>
+    <div>
       <ViewportRestrict type="landscape" display={true}
         text="Please turn your smartphone to a portrait position for better visuals"
       />
       <div className="App">
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/category" component={Order} />
-        </Switch>
+        <Pages />
       </div>
-    </Router>
+    </div>
   );
 }
 

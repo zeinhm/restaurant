@@ -12,7 +12,7 @@ export default class OrderPage extends Component {
             <Header />
             <Warning />
             <div className="container">
-              <Order id="menu" />
+              <Order {...this.props} id="menu" />
             </div>
           </Col>
         </Row>
