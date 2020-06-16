@@ -1,23 +1,27 @@
 import React, { Component } from 'react'
 import { Dropdown, Row } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faUser, faClock, faShippingFast, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+import { faUser, faClock, faShippingFast, faArrowRight, faTrashAlt } from '@fortawesome/free-solid-svg-icons'
 import { orderData } from 'data'
 
 export default class Order extends Component {
 
   state = {
+    orderData: [],
     qty: 1,
     totalPrice: 0
   }
 
   componentDidMount() {
-    this.getPrice()
+    this.getOrderData(orderData)
   }
 
   componentDidUpdate(prevProps, prevState) {
+    if (prevState.orderData !== this.state.orderData) {
+      this.getTotalPrice(this.state.qty, this.state.orderData)
+    }
     if (prevState.qty !== this.state.qty) {
-      this.getTotalPrice(this.state.qty, this.getPrice())
+      this.getTotalPrice(this.state.qty, this.state.orderData)
     }
   }
 
@@ -27,19 +31,27 @@ export default class Order extends Component {
     }))
   }
 
-  getTotalPrice = (qty, price) => {
-    console.log(qty)
+  getTotalPrice = (qty, orderData) => {
+    const price = orderData.reduce((total, item) => total + item.price, 0).toFixed(2)
     this.setState({
       totalPrice: (qty * price).toFixed(2)
     })
   }
 
-  getPrice = () => {
-    const price = orderData.reduce((total, item) => total + item.price, 0).toFixed(2)
+  getOrderData = data => {
     this.setState({
-      totalPrice: price
+      orderData: data
     })
-    return price
+  }
+
+  deleteItems = id => {
+    const { orderData } = this.state
+    let newOrderData = [...orderData]
+    const selectedData = orderData.map(e => e.id).indexOf(id)
+    newOrderData.splice(selectedData, 1)
+    this.setState({
+      orderData: newOrderData
+    })
   }
 
   render() {
@@ -73,9 +85,14 @@ export default class Order extends Component {
             <div className="order-list">
               <table size="sm">
                 {
-                  orderData.map((i, key) =>
-                    <tr key={key} className="item">
-                      <td className="img"><img src={require(`assets/images/${i.img}.jpg`)} alt="" /></td>
+                  this.state.orderData.map((i, key) =>
+                    <tr key={i.id} className="item">
+                      <td className="img">
+                        <div onClick={() => this.deleteItems(i.id)} className="delete-icon">
+                          <FontAwesomeIcon icon={faTrashAlt} />
+                        </div>
+                        <img src={require(`assets/images/${i.img}.jpg`)} alt="" />
+                      </td>
                       <td className="qty"><p>&nbsp;1 x&nbsp;</p></td>
                       <td className="name"><p>{i.name}</p></td>
                       <td className="price"><span>${i.price}</span></td>
