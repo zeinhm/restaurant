@@ -64,11 +64,10 @@ export default class Pages extends Component {
   }
 
   addItems = item => {
-    const { order } = this.state
-    let newOrder = [...order, item]
-    this.setState({
-      order: newOrder
+    this.setState(prevState => ({
+      order: [...prevState.order, item]
     })
+    )
   }
 
 
