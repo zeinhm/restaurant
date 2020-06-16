@@ -19,6 +19,14 @@
   position: relative;
 }
 
+.menu .images .add {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  background: rgba(255,255, 255, .85);
+  border-radius: 10px 0 0 0;
+}
+
 .menu-item .images img {
   width: 100%;
 }
@@ -28,6 +36,7 @@
   bottom: 0;
   left: 0;
   background: rgba(255,255, 255, .85);
+  border-radius: 0 10px 0 0;
 }
 
 .menu-item .desc .detail {
@@ -60,8 +69,12 @@
     border-radius: 15px 15px 0 0;
   }
 
+  .menu .images .add {
+    font-size: .75rem;
+    padding: .5rem .75rem;
+  }
+
   .menu-item .images > .time {
-    border-radius: 0 10px 0 0;
     font-size: .75rem;
     padding: .5rem;
   }
@@ -88,6 +101,27 @@
 @media(min-width:481px) {
   .menu-item {
     width: 50%;
+  }
+  .menu .images .add {
+    /* opacity: 0; */
+    background-color: black;
+    opacity: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+    color: white;
+  }
+  .menu .images .add:hover {
+    opacity: .75;
+    cursor: pointer;
+  }
+
+  .menu .images .add svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2rem;
   }
 }
 @media(min-width:769px) {

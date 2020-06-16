@@ -1,2 +1,2 @@
-export { default as menuData } from './menu'
-export { default as orderData } from './order'
+export { default as dataMenu } from './menu'
+export { default as dataOrder } from './order'

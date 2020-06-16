@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Row, Col } from 'react-bootstrap'
-import { Navigation, OrderComponent, Header, Warning } from 'components'
+import { Navigation, Order, Header, Warning } from 'components'
 
-export default class Order extends Component {
+export default class OrderPage extends Component {
   render() {
     return (
       <div className="home-layout">
@@ -12,7 +12,7 @@ export default class Order extends Component {
             <Header />
             <Warning />
             <div className="container">
-              <OrderComponent />
+              <Order id="menu" />
             </div>
           </Col>
         </Row>
